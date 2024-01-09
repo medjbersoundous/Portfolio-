@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 75px;
+  }
+  
+  body {
+    font-weight: 400;
+    overflow-x: hidden;
+    position: relative;
+    background-color: #121212 !important;
+    color: #fff !important;
+    font-family: 'Centra', sans-serif !important;
+  }
+  
+  
+  a:hover {
+    text-decoration: none;
+  }
+  
+/*#####################################*/
+  
+  .soundous{
+    animation: updown 3s linear infinite;
+  }
+  
+  @keyframes updown {
+      0% {
+          transform: translateY(-20px);
+      }
+      50% {
+          transform: translateY(20px);
+      }
+      100% {
+          transform: translateY(-20px);
+      }
+  }
+  
+/*#####################################*/
+
+  
+  /*carddddd*/
+  .proj-imgbx::before {
+    content: "";
+    background: linear-gradient(90.21deg, #ddda47 -5.91%, #bdbb2f 111.58%);
+    opacity: 0.85;
+    position: absolute;
+    width: 100%;
+    height: 0;
+    transition: 0.4s ease-in-out;
+  }
+  .proj-imgbx:hover::before {
+    height: 100%;
+  }
+  .proj-txtx {
+    transform: translate(-50%, -50%);
+    transition: 0.5s ease-in-out;
+   
+  }
+  .proj-imgbx:hover .proj-txtx {
+    top: 50%;
+    opacity: 1;
+  } 
+  
