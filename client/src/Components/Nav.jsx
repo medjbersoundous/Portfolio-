@@ -9,21 +9,23 @@ import {
 
 const Nav = () => {
   const [activeLink, setActiveLink] = useState('home');
-  const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
+  const [scrolled, setScrolled] = useState(false);
+
   useEffect(() => {
-    const onScroll = () => {
-      if (window.scrollY > 50) {
+    const handleScroll = () => {
+      if (window.scrollY > 0) {
         setScrolled(true);
       } else {
         setScrolled(false);
       }
-    }
-
-    window.addEventListener("scroll", onScroll);
-
-    return () => window.removeEventListener("scroll", onScroll);
+    };
+    console.log('useEffect is running'); 
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
 
   const onUpdateActiveLink = (value) => {
@@ -36,11 +38,15 @@ const Nav = () => {
 
   return (
     <Router>
-      <nav className={`pt-7 pr-[9%]  ${scrolled ? "scrolled" : ""}`}>
+     <nav
+      className={`py-5 pr-[9%] fixed w-full z-40 transition ${
+        scrolled ? 'bg-gray-950/75 ' : 'bg-transparent'
+      }`}
+    >
         <div className="md:hidden">
           <span onClick={toggleMenu}><AiOutlineMenu className="text-3xl ms-auto" /></span>
         </div>
-        <div className={`md:flex items-center ${menuOpen ? "block" : "hidden"}`}>
+        <div className={`md:flex items-center  ${menuOpen ? "block" : "hidden"}`}>
           <div className="md:ml-auto font-thin text-gray-300 md:mr-3">
             <Link to="#home" className="md:m-4 hover:text-white text-xl" onClick={() => onUpdateActiveLink('home')}>Home</Link>
             <Link to="#skills" className="md:m-4 hover:text-white text-xl" onClick={() => onUpdateActiveLink('skills')}>Skills</Link>

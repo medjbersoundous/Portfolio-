@@ -51,7 +51,7 @@ const Projects = () => {
   ];
 
   return (
-    <section className="project ps-[80px] px-0 relative  bg-black" id="projects">
+    <section className="project pb-14 ps-[80px] px-0 relative  bg-black" id="projects">
       
       <div className="container mx-auto py-10">
         <TrackVisibility>

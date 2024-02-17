@@ -49,8 +49,8 @@ const Main = () => {
   };
 
   return (
-    <section className="mt-0 pt-[120px] mb-[100px] flex w-full ms-[10%]" id="home">
-      <div className="items-center w-1/2">
+    <section className=" pt-[230px] mb-[100px] flex w-full ms-[10%]" id="home">
+      <div className="items-center pt-4 w-1/2">
         <div className="">
           <span className="font-semibold text-white py-2 px-3 bg-gradient-to-r from-yellow-300 to-transparent text-lg mb-4 inline-block">Welcome to my Portfolio</span>
           <h1 className="text-5xl font-bold tracking-wide leading-1 mb-5 block">{`Hey! I'm Soundous`}<br /><span className="text-yellow-300 bg-opacity-40" dataPeriod="1000" data-rotate='["Front-end Developer", "Computer science student "]'><span className="border-r-2 border-gray-600 border-opacity-50">{text}</span></span></h1>
